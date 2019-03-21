@@ -1,0 +1,43 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: 123456
+    url: jdbc:mysql://192.168.1.112:3306/sell?useSSL=false&serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf8
+  jpa:
+    show-sql: true
+    # 开启懒加载机制
+    properties:
+      hibernate:
+        enable_lazy_load_no_trans: true
+  # 对于为空的非必须字段，返回时不显示
+  jackson:
+    default-property-inclusion: non_null
+  redis:
+    host: 192.168.1.112
+    port: 6379
+    password: 123456
+
+# 修改访问路径的前缀
+server:
+  servlet:
+    context-path: /sell
+
+projecturl:
+  wechatMpAuthorize: http://sell.natapp4.cc
+  wechatOpenAuthorize: http://sell.natapp4.cc
+  sell: http://sell.natapp4.cc
+
+wechat:
+  mpAppId: wxa6344813f106bc7a
+  mpAppSecret: 0561d7c09b9cc71b0083e9133e9a903d
+  openAppId : wxaf53a107603fccae
+  openAppSecret : 4ca3a5a3fb96f41ff47ec0e65c88e4ce
+  mchId: 137945590x
+  mchKey: 0561d7c09b9cc71b00xxxxxxxxxxxx
+  keyPath: D:/weixin_cert/apiclient_cert.p12 #退款要用到的证书
+  notify_url: http://gzcstec.com/sell/pay/notify
+  templateIds:
+    orderStatus: uyjvfWUNNxavK_hW_dfNM1noVp-jHXcjadjBcM8BVYY
+
+
